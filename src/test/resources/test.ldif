@@ -1,0 +1,57 @@
+dn: dc=example,dc=com
+objectClass: domain
+objectClass: top
+dc: example
+
+dn: ou=groups,dc=example,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=example,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=admin,ou=people,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Admin
+sn: Main
+uid: admin
+userPassword: adminPass
+
+dn: uid=user,ou=people,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: userA
+sn: Bc
+uid: user
+userPassword: userPass
+
+dn: uid=fake,ou=people,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Fake
+sn: User
+uid: fake
+userPassword: fakePass
+
+dn: cn=user,ou=groups,dc=example,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: user
+uniqueMember: uid=admin,ou=people,dc=example,dc=com
+uniqueMember: uid=user,ou=people,dc=example,dc=com
+
+dn: cn=admin,ou=groups,dc=example,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: admin
+uniqueMember: uid=admin,ou=people,dc=example,dc=com
