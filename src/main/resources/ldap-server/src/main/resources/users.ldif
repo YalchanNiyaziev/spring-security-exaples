@@ -21,7 +21,6 @@ objectclass: inetOrgPerson
 cn: Admin
 sn: Main
 uid: admin
-ou: user
 userPassword: adminPass
 
 dn: uid=user,ou=people,dc=example,dc=com
@@ -31,8 +30,18 @@ objectclass: organizationalPerson
 objectclass: inetOrgPerson
 cn: userA
 sn: Bc
-uid: userA
+uid: user
 userPassword: userPass
+
+dn: uid=fake,ou=people,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Fake
+sn: User
+uid: fake
+userPassword: fakePass
 
 dn: cn=user,ou=groups,dc=example,dc=com
 objectclass: top
